@@ -72,9 +72,6 @@
             "name": "[variables('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[variables('siteLocation')]",
-            "tags": {
-                "displayName": "HostingPlan"
-            },
             "properties": {
                 "name": "[variables('hostingPlanName')]",
                 "sku": "[variables('sku')]",
@@ -91,8 +88,7 @@
                 "[concat('Microsoft.Web/serverFarms/', variables('hostingPlanName'))]"
             ],
             "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty",
-                "displayName": "Website"
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty"
             },
             "properties": {
                 "name": "[variables('siteName')]",
