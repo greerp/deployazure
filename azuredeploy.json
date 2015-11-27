@@ -28,20 +28,6 @@
             ],
             "defaultValue": "0"
         },
-        "administratorLogin": {
-            "type": "string"
-        },
-        "administratorPassword": {
-            "type": "securestring"
-        },
-        "collation": {
-            "type": "string",
-            "defaultValue": "SQL_Latin1_General_CP1_CI_AS"
-        },
-        "edition": {
-            "type": "string",
-            "defaultValue": "Basic"
-        },
         "applicationName": {
             "type": "string",
             "defaultValue": "Default Application Name"
@@ -58,8 +44,6 @@
         "siteLocation" : "[parameters('siteLocation')]",
         "sqlServerName" : "[concat('sqlsrv',parameters('resourceSuffix'))]",
         "hostingPlanName" : "[concat('hostplan',parameters('resourceSuffix'))]",
-        "administratorLogin" : "[parameters('administratorLogin')]",
-        "administratorPassword" : "[parameters('administratorPassword')]",
         "sku" : "[parameters('sku')]",
         "workerSize" : "[parameters('workerSize')]",
         "applicationName" : "[parameters('applicationName')]",
