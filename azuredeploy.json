@@ -5,6 +5,9 @@
         "siteName": {
           "type": "string"
         },
+        "hostingPlanName": {
+            "type": "string"
+        },
         "siteLocation": {
             "type": "string"
         },
