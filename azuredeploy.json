@@ -106,7 +106,7 @@
                     "name": "web",
                     "type": "sourcecontrols",
                     "dependsOn": [
-                       "[concat('Microsoft.Web/Sites', variables('webSiteHost'))]",
+                       "[concat('Microsoft.Web/Sites/', variables('webSiteHost'))]",
                        "[concat('Microsoft.Web/Sites/', variables('webSiteHost'), '/config/web')]"
                     ],
                     "properties": {
