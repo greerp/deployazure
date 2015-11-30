@@ -3,6 +3,9 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceSuffix": {
+      	"type": "string"
+    },
+    	"hostingPlanName": {
             "type": "string"
         },
         "siteLocation": {
@@ -14,8 +17,7 @@
                 "Free",
                 "Shared",
                 "Basic",
-                "Standard",
-                "Premium"
+                "Standard"
             ],
             "defaultValue": "Free"
         },
@@ -53,7 +55,7 @@
     "resources": [
         {
             "apiVersion": "2014-06-01",
-            "name": "[variables('hostingPlanName')]",
+      "name": "[parameters('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[variables('siteLocation')]",
             "properties": {
