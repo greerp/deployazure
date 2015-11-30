@@ -5,8 +5,8 @@
         "resourceSuffix": {
       	     "type": "string"
         },
-    	"hostingPlanName": {
-            "type": "string"
+        "hostingPlanName1": {
+           "type": "string"
         },
         "siteLocation": {
             "type": "string"
