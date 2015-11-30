@@ -2,11 +2,8 @@
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-    "siteName": {
-      "type": "string"
-    },
-    "hostingPlanName": {
-           "type": "string"
+        "siteName": {
+          "type": "string"
         },
         "siteLocation": {
             "type": "string"
@@ -43,6 +40,7 @@
     },
     "variables": {
         "siteLocation" : "[parameters('siteLocation')]",
+        "hostingPlanName" : "[parameters('hostingPlanName')]",
         "sqlServerName" : "[concat('sqlsrv','xxxx247')]",
         "sku" : "[parameters('sku')]",
         "workerSize" : "[parameters('workerSize')]",
@@ -53,11 +51,11 @@
     "resources": [
         {
             "apiVersion": "2014-06-01",
-            "name": "[parameters('hostingPlanName')]",
+            "name": "[variables('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
       "location": "[parameters('siteLocation')]",
             "properties": {
-        "name": "[parameters('hostingPlanName')]",
+        "name": "[variables('hostingPlanName')]",
                 "sku": "[variables('sku')]",
                 "workerSize": "[variables('workerSize')]",
                 "numberOfWorkers": 1
@@ -69,14 +67,14 @@
             "type": "Microsoft.Web/sites",
             "location": "[variables('siteLocation')]",
             "dependsOn": [
-        "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
+        "[concat('Microsoft.Web/serverFarms/', variables('hostingPlanName'))]"
             ],
             "tags": {
-        "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
+        "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty"
             },
             "properties": {
         "name": "[parameters('siteName')]",
-        "serverFarm": "[parameters('hostingPlanName')]"
+        "serverFarm": "[variables('hostingPlanName')]"
             },
             "resources": [
                 {
