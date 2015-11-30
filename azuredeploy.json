@@ -42,7 +42,7 @@
         }
     },
     "variables": {
-        "siteName" : "concat('site',[parameters('siteName'))]",
+        "siteName" : "[concat('site',parameters('siteName'))]",
         "siteLocation" : "[parameters('siteLocation')]",
         "hostingPlanName" : "[parameters('hostingPlanName')]",
         "sqlServerName" : "[concat('sqlsrv','xxxx247')]",
