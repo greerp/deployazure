@@ -31,6 +31,9 @@
       	  "type": "string",
           "defaultValue": "Test App Setting Value"
         },
+        "hostingPlanName": {
+            "type": "string"
+        },
         "repoUrl": {
             "type": "string"
         },
