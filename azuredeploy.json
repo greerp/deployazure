@@ -5,11 +5,6 @@
         "resourceSuffix": {
       	     "type": "string"
         },
-        
-        "hostingPlanName": {
-            "type": "string"
-        },
-
         "siteLocation": {
             "type": "string"
         },
@@ -32,7 +27,9 @@
             ],
             "defaultValue": "0"
         },
-
+        "hostingPlanName": {
+            "type": "string"
+        },
     	"someAppSetting": {
       	  "type": "string",
           "defaultValue": "Test App Setting Value"
