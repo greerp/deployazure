@@ -86,7 +86,7 @@
                   "type": "config",
                   "name": "web",
                   "dependsOn": [
-            "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
+            "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
                   ],
                   "properties": {
                     "appSettings": [
@@ -106,8 +106,8 @@
                     "name": "web",
                     "type": "sourcecontrols",
                     "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]",
-            "[concat('Microsoft.Web/Sites/', parameters('siteName'), '/config/web')]"
+            "[resourceId('Microsoft.Web/Sites', variables('siteName'))]",
+            "[concat('Microsoft.Web/Sites/', variables('siteName'), '/config/web')]"
                     ],
                     "properties": {
                         "RepoUrl": "[parameters('repoUrl')]",
