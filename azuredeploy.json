@@ -28,9 +28,9 @@
             ],
             "defaultValue": "0"
         },
-        "applicationName": {
-            "type": "string",
-            "defaultValue": "Default Application Name"
+    	"someAppSetting": {
+      	  "type": "string",
+          "defaultValue": "Test App Setting Value"
         },
         "repoUrl": {
             "type": "string"
@@ -110,7 +110,7 @@
                     ],
                     "properties": {
                         "RepoUrl": "[parameters('repoUrl')]",
-                        "branch": "[variables('branch')]",
+            	    	"branch": "[parameters('branch')]",
                         "IsManualIntegration": true                 
                     }
                 }          
