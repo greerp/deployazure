@@ -42,7 +42,7 @@
         }
     },
     "variables": {
-        "siteName" : "[concat('site',parameters('siteName'))]",
+        "webSiteHost" : "[concat('site',parameters('siteName'))]",
         "siteLocation" : "[parameters('siteLocation')]",
         "hostingPlanName" : "[parameters('hostingPlanName')]",
         "sqlServerName" : "[concat('sqlsrv','xxxx247')]",
@@ -67,7 +67,7 @@
         },
         {
             "apiVersion": "2014-06-01",
-            "name": "[variables('siteName')]",
+            "name": "[variables('webSiteName')]",
             "type": "Microsoft.Web/sites",
             "location": "[variables('siteLocation')]",
             "dependsOn": [
@@ -77,7 +77,7 @@
         "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty"
             },
             "properties": {
-        "name": "[variables('siteName')]",
+        "name": "[variables('webSiteName')]",
         "serverFarm": "[variables('hostingPlanName')]"
             },
             "resources": [
@@ -86,7 +86,7 @@
                   "type": "config",
                   "name": "web",
                   "dependsOn": [
-            "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
+            "[concat('Microsoft.Web/Sites/', variables('webSiteName'))]"
                   ],
                   "properties": {
                     "appSettings": [
@@ -106,8 +106,8 @@
                     "name": "web",
                     "type": "sourcecontrols",
                     "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variables('siteName'))]",
-            "[concat('Microsoft.Web/Sites/', variables('siteName'), '/config/web')]"
+            "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]",
+            "[concat('Microsoft.Web/Sites/', variables('webSiteName'), '/config/web')]"
                     ],
                     "properties": {
                         "RepoUrl": "[parameters('repoUrl')]",
