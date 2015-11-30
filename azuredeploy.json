@@ -46,7 +46,7 @@
         "hostingPlanName" : "[concat('hostplan',parameters('resourceSuffix'))]",
         "sku" : "[parameters('sku')]",
         "workerSize" : "[parameters('workerSize')]",
-        "applicationName" : "[parameters('applicationName')]",
+        "applicationName" : "[parameters('someAppSetting')]",
         "repoUrl" : "[concat(parameters('repoUrl'),'.git')]",
         "branch" : "[parameters('branch')]"
     },
