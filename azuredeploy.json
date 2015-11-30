@@ -40,13 +40,13 @@
         }
     },
     "variables": {
-        "siteName" : "sitepg200",
-        "siteLocation" : "North Europe",
-        "sqlServerName" : "sqlpg200",
-        "hostingPlanName" : "hostplan200",
+        "siteName" : "[concat('site',parameters('resourceSuffix'))]",
+        "siteLocation" : "[parameters('siteLocation')]",
+        "sqlServerName" : "[concat('sqlsrv',parameters('resourceSuffix'))]",
+        "hostingPlanName" : "[concat('hostplan',parameters('resourceSuffix'))]",
         "sku" : "[parameters('sku')]",
         "workerSize" : "[parameters('workerSize')]",
-        "applicationName" : "MyApp",
+        "applicationName" : "[parameters('applicationName')]",
         "repoUrl" : "[concat(parameters('repoUrl'),'.git')]",
         "branch" : "[parameters('branch')]"
     },
