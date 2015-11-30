@@ -70,15 +70,15 @@
             "name": "[variables('webSiteHost')]",
             "type": "Microsoft.Web/sites",
             "location": "[variables('siteLocation')]",
-            "dependsOn": [
-        "[concat('Microsoft.Web/serverFarms/', variables('hostingPlanName'))]"
+            "dependsOn": [ 
+               "[concat('Microsoft.Web/serverFarms/', variables('hostingPlanName'))]"
             ],
             "tags": {
         "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty"
             },
             "properties": {
-        "name": "[variables('webSiteHost')]",
-        "serverFarm": "[variables('hostingPlanName')]"
+               "name": "[variables('webSiteHost')]",
+               "serverFarm": "[variables('hostingPlanName')]"
             },
             "resources": [
                 {
@@ -86,7 +86,7 @@
                   "type": "config",
                   "name": "web",
                   "dependsOn": [
-            "[concat('Microsoft.Web/Sites/', variables('webSiteHost'))]"
+                     "[concat('Microsoft.Web/Sites/', variables('webSiteHost'))]"
                   ],
                   "properties": {
                     "appSettings": [
@@ -106,8 +106,8 @@
                     "name": "web",
                     "type": "sourcecontrols",
                     "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variables('webSiteHost'))]",
-            "[concat('Microsoft.Web/Sites/', variables('webSiteHost'), '/config/web')]"
+                       "[concat('Microsoft.Web/Sites', variables('webSiteHost'))]",
+                       "[concat('Microsoft.Web/Sites/', variables('webSiteHost'), '/config/web')]"
                     ],
                     "properties": {
                         "RepoUrl": "[parameters('repoUrl')]",
