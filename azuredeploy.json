@@ -27,12 +27,13 @@
             ],
             "defaultValue": "0"
         },
+        "hostPlanName": {
+            "type": "string"
+        },
+
     	"someAppSetting": {
       	  "type": "string",
           "defaultValue": "Test App Setting Value"
-        },
-        "hostPlanName": {
-            "type": "string"
         },
         "repoUrl": {
             "type": "string"
