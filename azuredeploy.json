@@ -51,7 +51,7 @@
             "type": "string",
             "defaultValue": "Basic"
         },
-        "Application Name": {
+        "applicationName": {
             "type": "string",
             "defaultValue": "Default Application Name"
         },
@@ -205,7 +205,7 @@
                         "appSettings": [
                             {
                                 "name": "ApplicationName",
-                                "value": "[parameters('Application Name')]"
+                                "value": "[variables('applicationName')]"
                             },
                             {
                                 "name": "DBServer",
